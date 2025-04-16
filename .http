@@ -1,0 +1,8 @@
+### Create a new word
+POST http://localhost:4000/words
+Content-Type: application/json
+
+{
+  "word": "appropriate",
+  "pos": "adjective"
+}
