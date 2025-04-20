@@ -1,6 +1,9 @@
+import { addWord, addWords, getWord } from '@/controllers/word.controller';
 import { FastifyInstance } from 'fastify';
-import { postWord } from '@/controllers/word.controller';
 
 export default async function wordRoutes(fastify: FastifyInstance) {
-  fastify.post('/words', postWord);
+  fastify.put('/:word', addWord);
+  fastify.put('/bulk', addWords);
+  fastify.put('/scrape', addWords);
+  fastify.get('/', getWord);
 }

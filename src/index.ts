@@ -11,7 +11,7 @@ fastify.get('/', async (request, reply) => {
 
 const start = async () => {
   try {
-    await fastify.register(wordRoutes); 
+    await fastify.register(wordRoutes, { prefix: '/words' });
     await fastify.listen({ port: 4000 });
     console.log('Server running at http://localhost:4000');
   } catch (err) {

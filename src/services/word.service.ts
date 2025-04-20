@@ -1,5 +1,7 @@
 import { scrapeEnLongman } from '@/utils/scrapers/en-longman';
 
-export async function scrapeWord(word: string, pos?: string): Promise<string | null> {
-  return await scrapeEnLongman(word, pos);
+type ParsedWord = Awaited<ReturnType<typeof scrapeEnLongman>>;
+
+export async function scrapeWord(word: string): Promise<ParsedWord> {
+  return await scrapeEnLongman(word);
 }
